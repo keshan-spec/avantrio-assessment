@@ -1,0 +1,109 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: $container-bg;
+}
+
+.login__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 80px;
+
+    .info_text {
+        box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: $base-color;
+        color: white;
+        padding: 20px 0px 20px 20px;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            padding-left: 20px;
+
+            ::after {
+                content: '';
+                width: 100%;
+                height: 10px;
+                padding: 10px;
+                background-color: white;
+
+            }
+        }
+
+        span {
+            padding: 20px;
+            width: 80%;
+            line-height: 1.5rem;
+            font-weight: 200;
+            font-size: .7rem;
+        }
+
+        hr {
+            width: 60%;
+
+        }
+
+    }
+
+
+    .form {
+        box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px 20px 20px;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        background-color: white;
+
+        input {
+            width: 70%;
+            // border-radius: 10px;
+            border: none;
+            outline: none;
+            margin: 10px;
+            border-bottom: 1px solid black;
+            padding: 10px;
+        }
+
+        button {
+            box-shadow: 7px 8px 14px -10px rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            width: 70%;
+            padding: 10px 15px;
+            margin: 30px;
+            outline: none;
+            border: none;
+            font-family: 'Poppins',
+                sans-serif;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            background-color: $base-color;
+            color: white;
+            border-radius: 6px;
+        }
+    }
+}

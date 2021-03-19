@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: #f4f6fa;
+}
+
+.login__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  padding: 80px;
+}
+
+.login__container .info_text {
+  -webkit-box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+          box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ff114a;
+  color: white;
+  padding: 20px 0px 20px 20px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.login__container .info_text h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.login__container .info_text h1 ::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.login__container .info_text span {
+  padding: 20px;
+  width: 80%;
+  line-height: 1.5rem;
+  font-weight: 200;
+  font-size: .7rem;
+}
+
+.login__container .info_text hr {
+  width: 60%;
+}
+
+.login__container .form {
+  -webkit-box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+          box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0px 20px 20px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background-color: white;
+}
+
+.login__container .form input {
+  width: 70%;
+  border: none;
+  outline: none;
+  margin: 10px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.login__container .form button {
+  -webkit-box-shadow: 7px 8px 14px -10px rgba(0, 0, 0, 0.75);
+          box-shadow: 7px 8px 14px -10px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  width: 70%;
+  padding: 10px 15px;
+  margin: 30px;
+  outline: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  background-color: #ff114a;
+  color: white;
+  border-radius: 6px;
+}
+/*# sourceMappingURL=login.css.map */
