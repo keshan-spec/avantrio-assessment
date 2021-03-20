@@ -2,22 +2,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
+
 body {
     padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
     max-width: 100vw;
+
     max-height: 100vh;
     overflow: hidden;
-    background-color: $container-bg;
+    font-family: 'Poppins', sans-serif;
 }
 
 .login__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 80px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $nav-bg;
 
     .info_text {
         box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
@@ -26,13 +28,14 @@ body {
         align-items: flex-start;
         justify-content: center;
         background-color: $base-color;
+        margin: auto;
         color: white;
         padding: 20px 0px 20px 20px;
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 70%;
         border-top-left-radius: 16px;
         border-bottom-left-radius: 16px;
-
+        margin-left: 120px;
 
         h1 {
             font-size: 3rem;
@@ -54,7 +57,7 @@ body {
             width: 80%;
             line-height: 1.5rem;
             font-weight: 200;
-            font-size: .7rem;
+            font-size: .9rem;
         }
 
         hr {
@@ -62,19 +65,37 @@ body {
 
         }
 
+        button {
+            cursor: pointer;
+            width: 30%;
+            padding: 10px;
+            margin: 20px;
+            outline: none;
+            border: none;
+            font-family: 'Poppins',
+                sans-serif;
+            font-weight: bold;
+            font-size: .8rem;
+            letter-spacing: 1.2px;
+            background-color: white;
+            color: $base-color;
+            border-radius: 6px;
+        }
+
     }
 
 
     .form {
-        box-shadow: -3px 8px 16px -10px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 16px 25px -20px rgba(0, 0, 0, 0.75);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 20px 0px 20px 20px;
         margin: auto;
-        width: 100%;
-        height: 100%;
+        margin-right: 200px;
+        width: 80%;
+        height: 70%;
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
         background-color: white;
@@ -104,6 +125,42 @@ body {
             background-color: $base-color;
             color: white;
             border-radius: 6px;
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .login__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .info_text {
+            display: none;
+            width: 100%;
+            padding: 10px;
+
+            input,
+            button {
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1066px) {
+    .login__container {
+        padding: 0;
+        margin: 0;
+
+
+        .info_text,
+        .form {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
         }
     }
 }

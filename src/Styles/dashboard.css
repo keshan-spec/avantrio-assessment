@@ -1,1 +1,383 @@
-/* No CSS *//*# sourceMappingURL=dashboard.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100vw;
+  color: black;
+  background-color: #f4f6fa;
+}
+
+hr {
+  width: 90%;
+  padding: .5px;
+  background-color: black;
+}
+
+.header {
+  padding-left: 8rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 300px;
+      grid-template-columns: 3fr 300px;
+}
+
+.header .left {
+  width: 100%;
+  margin: auto;
+}
+
+.header .left h1 {
+  font-size: 1.6rem;
+}
+
+.header .right {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .right .message {
+  padding: 4px;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: .9rem;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.header .right .icon {
+  margin-right: auto;
+  width: 100%;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+}
+
+.dashboard__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.2fr 3fr;
+      grid-template-columns: 1.2fr 3fr;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  margin: auto;
+}
+
+.dashboard__body .left {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 56px -35px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 56px -35px rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 10px;
+  max-height: 75vh;
+  height: 100%;
+}
+
+.dashboard__body .logs_section {
+  width: 85%;
+  max-height: 78vh;
+  height: 100%;
+  margin-left: 2rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.dashboard__body .logs_section .map_container,
+.dashboard__body .logs_section .logs_container {
+  -webkit-box-shadow: 0px 0px 56px -35px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 56px -35px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  border-radius: 6px;
+}
+
+.dashboard__body .logs_section .map_container {
+  position: relative;
+  height: 230px;
+  -webkit-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+
+.dashboard__body .logs_section .map_container .map__inner_container {
+  padding: 10px;
+  max-height: 230px;
+  max-width: 100%;
+  overflow: hidden;
+  overflow: hidden;
+}
+
+.dashboard__body .logs_section .map_container .map__inner_container img {
+  -webkit-transition: height 1s, -webkit-transform 1s;
+  transition: height 1s, -webkit-transform 1s;
+  transition: height 1s, transform 1s;
+  transition: height 1s, transform 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  width: 100%;
+}
+
+.dashboard__body .logs_section .map_container .toggle_btn {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transform: translate(-50%, -90%);
+          transform: translate(-50%, -90%);
+  -webkit-transition: -webkit-transform ease 100ms;
+  transition: -webkit-transform ease 100ms;
+  transition: transform ease 100ms;
+  transition: transform ease 100ms, -webkit-transform ease 100ms;
+}
+
+.dashboard__body .logs_section .map_container .toggle_btn img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform ease 100ms;
+  transition: -webkit-transform ease 100ms;
+  transition: transform ease 100ms;
+  transition: transform ease 100ms, -webkit-transform ease 100ms;
+}
+
+.dashboard__body .logs_section .map_container .toggle_btn .text {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.dashboard__body .logs_section .map_container .reset_map_btn {
+  position: absolute;
+  top: 20%;
+  -webkit-transform: translate(-50%, -90%);
+          transform: translate(-50%, -90%);
+  -webkit-transition: -webkit-transform ease 100ms;
+  transition: -webkit-transform ease 100ms;
+  transition: transform ease 100ms;
+  transition: transform ease 100ms, -webkit-transform ease 100ms;
+  left: 91%;
+  padding: 5px;
+  text-align: center;
+  border-radius: 16px;
+  width: 80px;
+  font-size: .7rem;
+  border: 2px solid #ff114a;
+  background-color: white;
+  color: #ff114a;
+}
+
+.dashboard__body .logs_section .map_container .map__navigation {
+  position: absolute;
+  top: 90%;
+  -webkit-transform: translate(-30%, -90%);
+          transform: translate(-30%, -90%);
+  -webkit-transition: -webkit-transform ease 100ms;
+  transition: -webkit-transform ease 100ms;
+  transition: transform ease 100ms;
+  transition: transform ease 100ms, -webkit-transform ease 100ms;
+  left: 90%;
+  font-size: .7rem;
+  display: block;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard__body .logs_section .map_container .map__navigation img {
+  width: 100%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard__body .logs_section .hidden {
+  height: 70px !important;
+  overflow: hidden;
+}
+
+.dashboard__body .logs_section .hidden .reset_map_btn,
+.dashboard__body .logs_section .hidden .map__navigation {
+  display: none;
+}
+
+.dashboard__body .logs_section .hidden .toggle_btn {
+  top: 70%;
+}
+
+.dashboard__body .logs_section .hidden .toggle_btn img {
+  margin-top: 10px;
+  top: 40%;
+  left: 48%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform ease 100ms;
+  transition: -webkit-transform ease 100ms;
+  transition: transform ease 100ms;
+  transition: transform ease 100ms, -webkit-transform ease 100ms;
+}
+
+.dashboard__body .logs_section .hidden .map__inner_container img {
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
+  width: 100%;
+}
+
+.dashboard__body .logs_section .logs_container {
+  margin-top: 20px;
+  max-height: 70vh;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.dashboard__body .logs_section .logs_container::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard__body .logs_section .logs_container .table_header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 250px 1fr;
+      grid-template-columns: 250px 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .name {
+  width: 100%;
+  text-align: center;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .name .inner_name {
+  font-size: .8rem;
+  position: relative;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .name .inner_name::after {
+  content: '';
+  height: 150%;
+  padding: .5px;
+  position: absolute;
+  right: -30%;
+  background-color: gray;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .col_names {
+  width: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #a9a8a8;
+  border: none;
+  position: relative;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .col_names span {
+  width: 100px;
+  text-align: center;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.dashboard__body .logs_section .logs_container .table_header .col_names :first-child {
+  color: #ff114a;
+  border-bottom: 3px solid #ff114a;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.dashboard__body .logs_section .logs_container .table_header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 71%;
+  padding: 1px;
+  background-color: #a9a8a8;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.dashboard__body .logs_section .logs_container .logs {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.dashboard__body .logs_section .logs_container .logs::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard__body .logs_section .logs_container .logs .logs__table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.dashboard__body .logs_section .logs_container .logs .logs__table th,
+.dashboard__body .logs_section .logs_container .logs .logs__table td {
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+.dashboard__body .logs_section .logs_container .logs .logs__table td:last-child {
+  color: blue;
+  cursor: pointer;
+  opacity: .9;
+}
+
+.dashboard__body .logs_section .logs_container .logs .logs__table tr:hover {
+  background-color: #f4f6fa;
+}
+
+.dashboard__body .logs_section .logs_container .logs .logs__table tr.data tr {
+  border-radius: 6px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+/*# sourceMappingURL=dashboard.css.map */

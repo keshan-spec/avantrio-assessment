@@ -1,0 +1,127 @@
+/* https://codepen.io/markcaron/pen/MvGRYV */
+
+.tabset>input[type="radio"] {
+    position: absolute;
+    display: none;
+}
+
+.tabset .tab-panel {
+    display: none;
+}
+
+.tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+.tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+.tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+.tabset>input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4),
+.tabset>input:nth-child(9):checked~.tab-panels>.tab-panel:nth-child(5),
+.tabset>input:nth-child(11):checked~.tab-panels>.tab-panel:nth-child(6) {
+    display: block;
+}
+
+.tabset>label {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    font-size: .9rem;
+    text-align: center;
+    padding: 15px 15px 25px;
+    outline: none;
+    cursor: pointer;
+    color: gray;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tabset>label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 100%;
+    height: 2px;
+    background: #8d8d8d;
+}
+
+.tabset>label:hover,
+.tabset>input:focus+label {
+    color: #ff114a;
+}
+
+.tabset>label:hover::after,
+.tabset>input:focus+label::after,
+.tabset>input:checked+label::after {
+    background: #ff114a;
+    height: 3px;
+}
+
+.tabset>input:checked+label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    color: #ff114a;
+}
+
+.tab-panel {
+    padding: 30px 0;
+    width: 100%;
+}
+
+.tab-panel .no_results {
+    display: flex;
+    max-width: 70%;
+    margin: auto;
+}
+
+.tabset {
+    width: 100%;
+}
+
+
+ul {
+    list-style: none;
+    padding: 10px;
+    margin: auto;
+}
+
+.user_item {
+    padding: 10px;
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+
+.user_item .name_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #06c;
+    position: relative;
+}
+
+.user_item .ham_icon {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    padding: 30px;
+    left: 28%;
+    transform: translateX(-10%);
+
+}
+
+.user_item .ham_icon img {
+    width: 100%;
+    transform: scale(.6);
+}

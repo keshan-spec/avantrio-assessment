@@ -2,13 +2,24 @@ import jwtDecode from 'jwt-decode';
 
 export const ENDPOINT = "http://apps.avantrio.xyz:8010"
 
+export type UserObject = {
+    id: number,
+    name: string
+}
+
+type Logs = { id: number, date: string, alert_view: boolean, time: string, latitude: number, longtitude: number }
+
+export type UserLogsObject = {
+    user_id: number,
+    user: string,
+    logs: Logs[]
+}
 
 export const getAccessToken = (): string => {
-    let data = {
-        username: "achala",
-        password: "Test@1234"
-    }
-
+    // let data = {
+    //     username: "achala",
+    //     password: "Test@1234"
+    // }
     let TOKEN = ""
     let cookies = document.cookie.split(";")
     cookies.forEach((cookie) => {

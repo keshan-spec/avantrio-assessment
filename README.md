@@ -29,3 +29,11 @@ GET : api/users/{id}/logs
             }
         ]}
 ```
+
+
+# Issues/Limitations
+
+1. The design pdf was limited only to the UI, and I had to assume some features based on how it looked. And the design might not be an exact replica, since I was not provived with the exact pixels and detail about each item/component. For example, the message box. No information regarding that was provided.
+
+2. In the dashboard, the staff logs table is static (provided a user ID it returns that user's logs), However, all the users had the same ID which made querying difficult.
+
