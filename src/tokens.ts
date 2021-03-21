@@ -2,11 +2,11 @@ import jwtDecode from 'jwt-decode';
 
 export const ENDPOINT = "http://apps.avantrio.xyz:8010"
 
+// custom types for API
 export type UserObject = {
     id: number,
     name: string
 }
-
 type Logs = { id: number, date: string, alert_view: boolean, time: string, latitude: number, longtitude: number }
 
 export type UserLogsObject = {
@@ -16,11 +16,8 @@ export type UserLogsObject = {
 }
 
 export const getAccessToken = (): string => {
-    // let data = {
-    //     username: "achala",
-    //     password: "Test@1234"
-    // }
     let TOKEN = ""
+    // look for the session cookie and return it
     let cookies = document.cookie.split(";")
     cookies.forEach((cookie) => {
         TOKEN = cookie.includes("dogfood") ? cookie.split("=")[1] : ""
@@ -28,7 +25,7 @@ export const getAccessToken = (): string => {
     return TOKEN
 }
 
-
+// get token and check if its valid or expired
 export const checkTokenValidity = (): boolean => {
     const token = getAccessToken();
     if (!token) return false;
