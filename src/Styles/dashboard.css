@@ -134,7 +134,6 @@ hr {
   max-height: 230px;
   max-width: 100%;
   overflow: hidden;
-  overflow: hidden;
 }
 
 .dashboard__body .logs_section .map_container .map__inner_container img {
@@ -379,5 +378,11 @@ hr {
   border-radius: 6px;
   border: 1px solid black;
   border-radius: 6px;
+}
+
+@media only screen and (min-width: 1326px) {
+  .logs_container {
+    max-width: 1500px;
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */
