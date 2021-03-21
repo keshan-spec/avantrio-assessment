@@ -7,17 +7,21 @@ interface Props {
 }
 
 export const HistoryPanel: React.FC<Props> = ({ user_id }) => {
+  // react state hook for storing logs
+  // uses custom data type : UserLogsObject
   const [logs, setLogs] = useState<UserLogsObject>()
 
+  // get the user logs for the given user id prop
   const getUserlogs = (user_id: number) => {
     let token = getAccessToken()
     let url = `${ENDPOINT}/api/user/${user_id}/logs`
 
-    axios.get(url, { headers: { authorization: `Bearer ${token}` } }).then(function (response) {
-      setLogs(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
+    axios.get(url, { headers: { authorization: `Bearer ${token}` } })
+      .then(function (response) {
+        setLogs(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
   }
 
   useEffect(() => {
@@ -50,7 +54,7 @@ export const HistoryPanel: React.FC<Props> = ({ user_id }) => {
                     <th>Location</th>
                   </tr>
                 </thead>
-
+                {/*Loop over logs state and render each log  */}
                 <tbody>
                   {logs.logs && logs.logs.map(log => {
                     return <>
@@ -67,7 +71,7 @@ export const HistoryPanel: React.FC<Props> = ({ user_id }) => {
             </div>
           </div>
         </>
-        : "Loading"
+        : <h1>Loading</h1>
       }
     </>
 

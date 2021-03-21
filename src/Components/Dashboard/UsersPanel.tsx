@@ -9,6 +9,7 @@ interface Props {
   users: UserObject[]
 }
 
+// generates a random color
 const getRandomColor = () => {
   return "#" + ((1 << 24) * Math.random() | 0).toString(16)
 }
@@ -25,6 +26,7 @@ export const UsersPanel: React.FC<Props> = ({ users }) => {
         <div className="tab-panels">
           <section className="tab-panel">
             <ul>
+              {/* Loop over the users given from the props and render each user item */}
               {users.length > 0 ?
                 users.map((user, idx) => {
                   return <li className="user_item" key={idx}>
@@ -35,11 +37,12 @@ export const UsersPanel: React.FC<Props> = ({ users }) => {
                     </span>
                   </li>
                 }) :
-                <img className="no_results" src="assets/no-results.svg" alt="" />
+                <img className="no_results" src="assets/no-results.svg" alt="" /> // if there is no users 
               }
             </ul>
           </section>
           <section className="tab-panel">
+            {/* Employee section is empty by default */}
             <img className="no_results" src="assets/no-results.svg" alt="" />
           </section>
         </div>

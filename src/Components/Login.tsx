@@ -1,20 +1,24 @@
-import '../Styles/login.css';
 import axios from 'axios'
-
 import { useRef, useState } from "react";
+
+import '../Styles/login.css';
 import { ENDPOINT } from '../tokens';
 
 interface Props {
-  authState: (value: boolean) => void
+  authState: (value: boolean) => void // state function for setting the auth status
 }
 
 export const Login: React.FC<Props> = ({ authState }) => {
+  // react hooks for mapping dom elements to hook
   const username = useRef<HTMLInputElement | null>(null)
   const password = useRef<HTMLInputElement | null>(null)
+
+  // react state hook for errors and loading (waiting for the api)
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<{ error: boolean, message: string }>({ error: false, message: "" });
 
 
+  // validates user input and sends request to endpoint
   const authenticate_user = () => {
     if (!username.current?.value) {
       username.current?.focus()
@@ -37,13 +41,15 @@ export const Login: React.FC<Props> = ({ authState }) => {
       headers: {},
       data
     }).then(res => {
+      // response received
       authState(true)
       document.cookie = `dogfood=${res.data.token}`
     }).catch(err => {
+      // error connecting or wrong credentials
       console.log(err);
-      password.current!.value = ""
+      password.current!.value = "" // reset password to blank
       setLoading(false)
-      setError({ error: true, message: "Incorrect username or password!" })
+      setError({ error: true, message: "Incorrect username or password!" }) // set error
     })
 
     return

@@ -7,8 +7,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react"
 import { getAccessToken, UserObject, ENDPOINT } from "../../tokens"
 
-interface Props { }
-
+// function component for Header section of the dashboard
 export const Header: React.FC = () => {
   return (
     <>
@@ -26,9 +25,12 @@ export const Header: React.FC = () => {
   )
 }
 
-export const Dashboard: React.FC<Props> = () => {
+export const Dashboard: React.FC = () => {
+  // react state hook for storing the users returned from API
+  // uses custom interface type: UserObject
   let [users, setUsers] = useState<UserObject[]>([])
 
+  // gets users from API and stores them in state
   const getUsers = (token: string) => {
     axios({
       method: 'get',
@@ -43,13 +45,13 @@ export const Dashboard: React.FC<Props> = () => {
 
 
   useEffect(() => {
-    const token = getAccessToken()
-    if (token.length < 0) {
-      return
-    }
+    const token = getAccessToken() // get token from cookie
 
+    // if token is null/empty return
+    if (token.length < 0) return
+
+    // get users from API
     getUsers(token)
-
   }, [])
 
   return (
@@ -63,6 +65,7 @@ export const Dashboard: React.FC<Props> = () => {
               <UsersPanel users={users} />
               <div className="logs_section">
                 <Map />
+                {/* user_id prop is set statically for now. reason explained in readme file */}
                 <HistoryPanel user_id={users[2].id} />
               </div>
             </>
