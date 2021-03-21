@@ -44,7 +44,7 @@ The Dashboard component consists of multiple function components for each grid i
 
 
 
-# UI Implemenations
+# UI Implementations
 
 ## Login
 ![Login](./screenshots/login-1360x768.png)
