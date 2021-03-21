@@ -56,8 +56,6 @@ The Dashboard component consists of multiple function components for each grid i
 ## Dashboard
 ![Dashboard map open](./screenshots/dashboard-map-open-1360x768.png)
 ![Dashboard map close](./screenshots/dashboard-map-close-1360x768.png)
-
-
 # Issues/Limitations
 
 1. The design pdf was limited only to the UI, and I had to assume some features based on how it looked. And the design might not be an exact replica, since I was not provived with the exact pixels and detail about each item/component. For example, the message box. No information regarding that was provided.
